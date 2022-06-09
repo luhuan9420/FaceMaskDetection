@@ -1,0 +1,6 @@
+train: ../yolo/images/train
+val: ../yolo/images/val
+
+nc: 3
+
+names: ['with_mask', 'mask_weared_incorrect','without_mask']
