@@ -23,6 +23,7 @@ UCSE ECE228 Final Project - Face Mask Classification and Detection using Neural 
 ## Usage
 Make sure that the directories are arranged as follows:
 
+```bash
 . FaceMaskDetection
 ├── data
 │   ├── annotations
@@ -38,7 +39,7 @@ Make sure that the directories are arranged as follows:
 │   └── results
 ├── YOLOv5
 └── README.md
-
+```
 
 
 ### CNN
@@ -49,9 +50,9 @@ To use the WandB API for online experiment tracking, please register a WandB acc
 
 The general form for running your Faster R-CNN implementation in your terminal is as follows:
 
-'''console
+```console
 python FasterRCNN/main.py --run_name <RUN_NAME>
-'''
+```
 This runs the experiment with default setting as follows:
 - 10 epochs
 - learning rate = 0.01
@@ -63,19 +64,19 @@ This runs the experiment with default setting as follows:
 
 To run the experiments with custom setting, you can use command line arguments as follows:
 
-'''console
+```console
 --epochs <NUM_EPOCHS>
 --lr <LEARNING_RATE>
 --focal_loss
 --wandb
 --run_name <RUN_NAME>
 --save 
-'''
+```
 
 For example, you can run the experiment with 50 epochs training with focal loss, using wandb, and saving result files with command as follows:
 
-'''console
+```console
 python FasterRCNN/main.py --epochs 50 --focal_loss --wandb --run_name <RUN_NAME> --save 
-'''
+```
 
 ### YOLOv5
