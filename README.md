@@ -2,21 +2,22 @@
 UCSE ECE228 Final Project - Face Mask Classification and Detection using Neural Network
 
 ## Dependencies
-- Python
-- Pytorch
-- torchvision
-- Numpy
-- cv2
-- xml.etree
-- collections
-- glob
-- pandas
-- torchmetrics
-- tqdm
-- wandb
-- scikit-learn
+- python==3.9+
+
 - focal_loss_torch
-- matplotlib
+- glob
+- matplotlib==3.4.2
+- numpy==1.19.5
+- opencv-python==4.5.5.64
+- pandas==1.4.1
+- Pytorch==1.9.0
+- scikit-learn
+- torchmetrics--0.8.2
+- torchvision==0.10.0
+- tqdm==4.61.2
+- wandb==0.12.17
+- xml.etree
+
 
 ## Data Preparation
 
@@ -35,7 +36,6 @@ Make sure that the directories are arranged as follows:
 │   ├── eval_utils.py
 │   ├── FasterRCNN.py
 │   ├── main.py
-│   ├── models
 │   └── results
 ├── YOLOv5
 └── README.md

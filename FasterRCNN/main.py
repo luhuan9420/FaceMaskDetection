@@ -7,11 +7,12 @@ import os
 import sys
 import numpy as np
 import wandb
+from focal_loss.focal_loss import FocalLoss
 from FasterRCNN import *
 from data_utils import *
 from eval_utils import *
 from config import cfg
-from focal_loss.focal_loss import FocalLoss
+
 
 # Set argpars
 parser = argparse.ArgumentParser()

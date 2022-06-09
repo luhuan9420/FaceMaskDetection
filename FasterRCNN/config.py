@@ -19,10 +19,10 @@ class cfg:
         self.save_file = save_file
         self.run_name = run_name
 
-        self.annotations_path = '../data/annotations'
-        self.images_path = '../data/images'
+        self.annotations_path = './data/annotations'
+        self.images_path = './data/images'
         self.focal_str = 'focal' if use_focal else 'no_focal'
-        self.output_path = "results/{}epochs-{}/".format(self.num_epochs, self.focal_str)
+        self.output_path = "FasterRCNN/results/{}epochs-{}/".format(self.num_epochs, self.focal_str)
         self.log_path     = self.output_path + "log"
         self.plot_output  = self.output_path + "scores.png"
 
