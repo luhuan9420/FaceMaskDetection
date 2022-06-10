@@ -17,7 +17,7 @@ from config import cfg
 # Set argpars
 parser = argparse.ArgumentParser()
 parser.add_argument('--epochs', dest='num_epochs', type=int, default=10)
-parser.add_argument('--lr', dest='learning_rate', type=int, default=0.01)
+parser.add_argument('--lr', dest='learning_rate', type=float, default=0.01)
 parser.add_argument('--focal_loss', dest='use_focal', action='store_true')
 parser.add_argument('--no_focal_loss', dest='use_focal', action='store_false')
 parser.add_argument('--wandb', dest='use_wandb', action='store_true')
