@@ -31,7 +31,7 @@ UCSE ECE228 Final Project - Face Mask Classification and Detection using Neural 
 ## Usage
 Make sure that the directories are arranged as follows:
 
-```bash
+```
 . FaceMaskDetection
 ├── data
 │   ├── annotations
@@ -124,36 +124,36 @@ The next two steps in the block below is to show how to setup the data for yolov
 -------------------------------------------------------------
 In **yolo** directory (not yolov5), run `xml_to_yolo.py` in the terminal to convert the XML anntations into the YOLOv5 format. 
 
-```
+```console
 python xml_to_yolo.py
 ```
 
 Split the data into train, validation, and test sets with a ratio of 8:1:1
-```
+```console
 python split_data.py
 ```
 -------------------------------------------------------------
 To train the model, run the following command
 
-```
+```console
 cd yolov5
 python train.py --img <image size> --batch <batch size> --epochs <# of epochs> --data FaceMask.yaml --cfg <model.yaml> --hyp hyp.facemask.yaml --name <project name>
 ```
 
 One of the command I use for my models is
 
-```
+```console
 python train.py --img 682 --batch 16 --epochs 50 --data FaceMask.yaml --cfg yolov5s.yaml --hyp hyp.facemask.yaml --name facemask1
 ```
 
 To run inference for test set, run the following command
 
-```
+```console
 python detect.py --source ../yolo/images/test/ --weights <model weight> --conf <confidence threshold> --save-txt --name <project name>
 ```
 
 If I want to use the weight from the model facemask1, I can run a command like this
 
-``` 
+```console
 python detect.py --source ../yolo/images/test/ --weights runs/train/facemask1/weights/best.pt --conf 0.2 --save-txt --name facemask1
 ```
