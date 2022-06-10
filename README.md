@@ -135,6 +135,14 @@ python split_data.py
 -------------------------------------------------------------
 To train the model, run the following command
 
+Make sure to install wandb if you want to track and visualize the YOLOv5 runs. 
+
+```console
+pip install -q wandb
+```
+
+The runs for our project can be found [here](https://wandb.ai/huanho/YOLOv5/workspace?workspace=user-huanho)
+
 ```console
 cd yolov5
 python train.py --img <image size> --batch <batch size> --epochs <# of epochs> --data FaceMask.yaml --cfg <model.yaml> --hyp hyp.facemask.yaml --name <project name>
