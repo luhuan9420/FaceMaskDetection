@@ -26,11 +26,7 @@ UCSE ECE228 Final Project - Face Mask Classification and Detection using Neural 
 - pyyaml
 
 
-## Dataset
-The models are trained on Face Mask Dataset from Kaggle that can be downloaded from [here](https://www.kaggle.com/datasets/andrewmvd/face-mask-detection). This dataset contains 853 images belonging to 3 classes, as well as their bounding boxes in the PASCAL VOC format. The classes are defined as follows:
-- `With mask`
-- `Without mask`
-- `Mask worn incorrectly`
+## Data Preparation
 
 ## Usage
 Make sure that the directories are arranged as follows:
@@ -41,6 +37,7 @@ Make sure that the directories are arranged as follows:
 │   ├── annotations
 │   └── images
 ├── CNN
+│   ├── cnn.ipynb
 ├── FasterRCNN
 │   ├── config.py
 │   ├── data_utils.py
@@ -70,6 +67,49 @@ Make sure that the directories are arranged as follows:
 ```
 
 ### CNN
+The CNN model is a Jupyter Notebook file named **cnn.ipynb**. Please follow the following steps to run the model.
+
+```console
+jupyter notebook
+```
+
+For the model without focal loss:
+- Skip the cell
+```console
+model.compile(loss = focal_loss(alpha = 1.),
+              optimizer = keras.optimizers.Adam(learning_rate=0.001),
+              metrics = ['accuracy']))
+```
+- Run the cell instead:
+```console
+model.compile(loss = 'categorical_crossentropy',
+              optimizer = keras.optimizers.Adam(learning_rate=0.001),
+              metrics = ['accuracy']))
+```
+
+For the model with focal loss:
+-Skip the cell:
+```console
+model.compile(loss = 'categorical_crossentropy',
+              optimizer = keras.optimizers.Adam(learning_rate=0.001),
+              metrics = ['accuracy']))
+```
+- Run the cell:
+```console
+model.compile(loss = focal_loss(alpha = 1.),
+              optimizer = keras.optimizers.Adam(learning_rate=0.001),
+              metrics = ['accuracy']))
+```
+
+The following coefficient could be adjusted to train the model:
+- learning rate
+- gamma, alpha of focal loss function
+
+To get the classification report:
+
+```console
+c_report = classification_report(true_classes, y_pred_classes)
+```
 
 
 ### Faster R-CNN
