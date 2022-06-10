@@ -26,7 +26,11 @@ UCSE ECE228 Final Project - Face Mask Classification and Detection using Neural 
 - pyyaml
 
 
-## Data Preparation
+## Dataset
+The models are trained on Face Mask Dataset from Kaggle that can be downloaded from [here](https://www.kaggle.com/datasets/andrewmvd/face-mask-detection). This dataset contains 853 images belonging to 3 classes, as well as their bounding boxes in the PASCAL VOC format. The classes are defined as follows:
+- `With mask`
+- `Without mask`
+- `Mask worn incorrectly`
 
 ## Usage
 Make sure that the directories are arranged as follows:
